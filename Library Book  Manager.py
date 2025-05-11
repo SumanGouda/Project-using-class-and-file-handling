@@ -7,6 +7,7 @@ class Book:
     def save_book(self):
         with open("Book.txt","a") as f:
             f.write(f"{self.title},{self.author},{self.isbn}\n")
+            #Create a file with name Book.txt and add this to it.
             
 class Library:
     def view_book(self):
@@ -14,11 +15,13 @@ class Library:
             content = f.readlines()
             for line in content:
                 print(line.strip())
+                #It will print all the value in the list content separately.
             
     def search_book(self,title):
         with open ("Book.txt", "r") as f:
             lines = f.readlines()
             matches = [line.strip() for line in lines if title.lower() in line.lower()]
+            #List comprehension return line which have title in it.
             if matches:
                 print("Search Results:")
                 for match in matches:
@@ -30,8 +33,10 @@ class Library:
         with open ("Book.txt", "r") as f:
             lines = f.readlines()
         line = [line for line in lines if isbn not in line]
+        #Return if isbn found not in the line.
         with open ("Book.txt", "w") as f:
             f.writelines(line)
+            #Overwrite the old data by the new data from the list line which do not have isbn input.
         print(f"Book with ISBN {isbn} has been deleted (if it existed).")
             
     def count_books(self):
@@ -56,19 +61,19 @@ b5.save_book()
 # Create Library object and perform operations
 lib = Library()
 
-print("\n📚 Viewing all books:")
+print("\n Viewing all books:")
 lib.view_book()
 
-print("\n🔍 Searching for 'pride':")
+print("\n Searching for 'pride':")
 lib.search_book("pride")
 
-print("\n🗑️ Deleting book with ISBN '9780451524935':")
+print("\n Deleting book with ISBN '9780451524935':")
 lib.delete_book("9780451524935")
 
-print("\n📚 Viewing all books after deletion:")
+print("\n Viewing all books after deletion:")
 lib.view_book()
 
-print("\n🔢 Counting total books:")
+print("\n Counting total books:")
 lib.count_books()
 
         

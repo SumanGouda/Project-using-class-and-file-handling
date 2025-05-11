@@ -12,11 +12,14 @@ class Contact :
     def delete_contact(self, remove_name):
         with open ("Contact.txt","r") as f:
             lines = f.readlines()
+            #Makes a list of all the lines in the text file.
             
-        updated_lines = [line for line in lines if remove_name not in line] 
+        updated_lines = [line for line in lines if remove_name not in line]
+        #List comprehension, takes out those line from the list lines which do not have remove_name variable. 
         
         with open ("Contact.txt","w") as f:
             f.writelines(updated_lines)
+            #Overwrite the content.
             
     def view_contact(self):
         with open ("Contact.txt","r") as f:
