@@ -1,59 +1,106 @@
-# File Organizer using Python
+# Contact Manager
 
-This is a simple Python script that organizes files in a specified folder by their file extensions. It's useful for keeping your directories clean and easy to navigate.
+A simple Python-based Contact Manager that allows users to store and retrieve contact information using file handling.
 
-## What It Does
+## 🚀 Features
 
-The script scans all the files in a given directory and moves them into subfolders based on their file types (e.g., `.jpg` files into a folder named `jpg`, `.pdf` into `pdf`, etc.).
+- Add contact details and save them to a `.txt` file
+- Retrieve and display all saved contacts
+- Simple command-line interface
+- Uses Python’s built-in file handling features
 
-## How It Works
+## 🛠 Technologies Used
 
-1. Lists all items in the source directory.
-2. Ignores any subdirectories (works only on files).
-3. Extracts the file extension of each file.
-4. Creates a new folder for each extension (if not already present).
-5. Moves the file into the corresponding folder.
+- Python
+- File Handling
 
-## Example
+## 📂 Project Structure
 
-If your folder contains:
-snackBOT/
-├── image1.png
-├── doc1.pdf
-├── music.mp3
-├── archive.zip
+Contact_Manager.py
+Contact.txt
 
 
-After running the script, it becomes:
-snackBOT/
-├── png/
-│ └── image1.png
-├── pdf/
-│ └── doc1.pdf
-├── mp3/
-│ └── music.mp3
-├── zip/
-│ └── archive.zip
+- `Contact_Manager.py`: Main script to add and read contact info
+- `Contact.txt`: Text file where contact information is stored
 
+## 🔧 How It Works
 
-## How to Use
+1. Run the script.
+2. Enter contact details.
+3. The program saves the contact to `Contact.txt`.
 
-1. Change the `source_file` path in the script to your folder path:
-   ```python
-   source_file = "D:\\PROJECTS\\LOGO\\snackBOT"
+## 💡 Example
 
-2. Run the script: python file_organizer.py
+Name: John Doe
+Phone: 1234567890
+Email: john@example.com
 
-## Requirements
+Saved to Contact.txt as:
+John Doe,1234567890,john@example.com
+
+## 📌 Requirements
 Python 3.x
 
-No external libraries needed (uses os and shutil)
+📄 License
+This project is open source and available under the MIT License.
 
-## Disclaimer
-Make sure to backup your files before running the script, especially if the folder contains important or system files.
 
-## Author
-Made by Suman Gouda as a part of learning Python and automating basic file tasks.
+
+
+
+
+
+
+### 📚 **Library Book Manager - README.md**
+
+# Library Book Manager
+
+A Python project to manage a simple library system using classes and file handling.
+
+## 📦 Features
+
+- Add books with title, author, and ISBN
+- View all books
+- Search for a book by title
+- Delete a book by ISBN
+- Count the total number of books
+
+## 💻 Technologies Used
+
+- Python
+- File Handling
+- Object-Oriented Programming (OOP)
+
+## 📂 File Structure
+Library_Book_Manager.py
+Book.txt
+
+
+- `Library_Book_Manager.py`: Main script containing `Book` and `Library` classes
+- `Book.txt`: Stores book data in CSV format
+
+## 🔧 How It Works
+
+1. **Add Book**: Uses the `Book` class to write to `Book.txt`
+2. **View/Search/Delete/Count**: Uses the `Library` class to manage books
+
+## 🧪 Sample
+book1 = Book("1984", "George Orwell", "123456")
+book1.save_book()
+
+lib = Library()
+lib.view_book()
+lib.search_book("1984")
+lib.delete_book("123456")
+lib.count_books()
+
+📌 Requirements
+Python 3.x
+
+📄 License
+This project is licensed under the MIT License.
+
+
 
 
 
